@@ -231,6 +231,7 @@ Check output file out/run-start-replay-1622658299.out
 ```
 
 ### Kill sdkperf
+
 __WARNING__: This will terminate ALL running sdkperfs.
 
 ```bash
