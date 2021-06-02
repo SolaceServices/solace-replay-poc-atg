@@ -1,0 +1,7 @@
+{
+    "queueName":"{{QUEUE}}",
+    "owner" : "{{CLIENT_USERNAME}}",
+    "maxMsgSpoolUsage" : 0,
+    "egressEnabled" : true,
+    "ingressEnabled" : true
+}

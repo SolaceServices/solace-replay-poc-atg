@@ -1,0 +1,9 @@
+{
+    "queueName":"{{QUEUE}}",
+    "owner" : "{{CLIENT_USERNAME}}",
+    "respectTtlEnabled" : true,
+    "maxTtl" : 86400,
+    "maxMsgSpoolUsage" : 10000,
+    "egressEnabled" : true,
+    "ingressEnabled" : true
+}

@@ -1,0 +1,5 @@
+{
+    "msgVpnName": "{{VPN}}",
+    "queueName": "{{QUEUE}}",
+    "subscriptionTopic" : "{{TOPIC_SUB}}"
+}
