@@ -10,7 +10,7 @@ Ramesh Natarajan (nram), Solace PSG
 
 ## Directories and files
 
-### cfg/router.cfg
+### Router config
 
 Clone sample.cfg
 
@@ -18,7 +18,7 @@ Clone sample.cfg
 cp cfg/sample.cfg cfg/router.cfg
 ```
 
-Make changes where required.
+The filename/path can be anything. The filename is passed as argument to other scripts. Make changes where required.
 
 ```  bash
 # Solace broker Management IPP
@@ -55,7 +55,7 @@ topic_prefix="atg/poc/replay"
 lvq_topic=">"
 ```
 
-### tests/mytest
+### Test inputs
 
 Create a folder under tests/ dir for each test. Drop any number of test files in the folder. All of them will be run in the listing order. Each file has the following syntax. Variable names are self explanatory.
 
@@ -74,6 +74,11 @@ nap_time=2
 ## Commands
 
 ### Creating queues
+
+This takes two arguments.
+
+1. router config
+2. number of queues to create
 
 ```bash
 ▶ bin/create-queues.sh cfg/lab-128-27.cfg 100
@@ -113,6 +118,14 @@ Creating queue replay-poc-3
 
 ### Deleting Queues
 
+This takes one argument
+
+1. router config
+
+The script looks for all queues matching the queue-prefix-name in the router config and deletes them all.
+
+__WARNING__: The script looks for all queues matching the queue-prefix-name in the router config and deletes them all!
+
 ```bash
 ▶ bin/delete-all-test-queues.sh cfg/lab-128-27.cfg
 Reading env.sh
@@ -142,6 +155,13 @@ Deleting Queue replay-poc-3
 ```
 
 ### Run publishers
+
+This takes two arguments.
+
+1. router config
+2. directory with list of tests
+
+All test files in the test dir are run in the order of listing.
 
 ```bash
 ▶ bin/pub.sh cfg/lab/lab-128-27.cfg tests/test1
@@ -181,6 +201,11 @@ Wait 2 seconds ...
 
 ### Run consumers
 
+This takes atleast two arguments.
+
+1. router config
+2. one or more queue names to bind to and drain
+
 ```bash
 ▶ bin/drainq.sh cfg/lab-128-27.cfg replay-poc-4
 Reading env.sh
@@ -205,6 +230,12 @@ check out-file: /Users/nram/Accounts/ATG/replay-poc-202103/solace-replay-poc-atg
 ```
 
 ### Start Replay
+
+This takes atleast two arguments.
+
+1. router config
+2. one or more queue names to start replay
+
 
 ```bash
 ▶ bin/start-replay.sh cfg/lab-128-27.cfg replay-poc-4 replay-poc-5
