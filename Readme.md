@@ -1,4 +1,4 @@
-# Replay POC for ATG
+# Replay POC scripts
 
 ## About
 
@@ -6,9 +6,18 @@ Scritps to setup and run replay POC for ATG.
 
 ### Author
 
-Ramesh Natarajan (nram), Solace PSG
+Ramesh Natarajan (nram), Solace PS
 
 ## Directories and files
+
+### Environment file
+
+Edit env.sh and update sdkperf path and other variables as required.
+
+```bash
+# update sdkperf_path per your environment.
+export sdkperf_path=~/Solace/sdkperf/jms
+```
 
 ### Router config
 
@@ -26,7 +35,7 @@ mgmt_ip="192.168.128.27:80"
 
 # CLI/SEMP user and password
 cli_user="admin"
-cli_pass="admin"
+cli_pass="xxxxx"
 
 # message backbone IPP
 msg_ip="192.168.160.127:55555"
@@ -36,7 +45,7 @@ vpn="atg-poc"
 
 # Client username and password
 user="test-user"
-pass="test123"
+pass="xxxxx"
 
 # default connection factory
 cf="test-cf"
@@ -55,7 +64,7 @@ topic_prefix="atg/poc/replay"
 lvq_topic=">"
 ```
 
-### Test inputs
+### Test input files
 
 Create a folder under tests/ dir for each test. Drop any number of test files in the folder. All of them will be run in the listing order. Each file has the following syntax. Variable names are self explanatory.
 
@@ -71,7 +80,7 @@ conn_factory=persistent-cf
 nap_time=2
 ```
 
-## Commands
+## Usage Reference
 
 ### Creating queues
 
