@@ -32,7 +32,7 @@ outfile=$PWD/out/run-$me-$ts.out
 > $outfile || { echo Unable to create output file $outfile; exit 1; }
 echo "$test_cfg: Queues: $qlist"
 #sdk_flags="-q"
-sdk_flags="-jcf=test-cf"
+sdk_flags="-jcf=$conn_factory"
 echo "Queues: $qlist Flags: $sdk_flags"
 ( $sdkperf_path/sdkperf_jms.sh -cip=$msg_ip -cu=$user@$vpn -cp=$pass -sql=$qlist $sdk_flags > $outfile 2>&1 ) &
 echo "check out-file: $outfile"

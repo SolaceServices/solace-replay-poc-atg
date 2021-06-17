@@ -47,7 +47,7 @@ function post_json() {
 }
 
 echo "Creating $nqueues $qname_prefix queues"
-url=http://$mgmt_ip/SEMP/v2/config/msgVpns/${vpn}/queues
+url=$mgmt_ip/SEMP/v2/config/msgVpns/${vpn}/queues
 ts=$(date "+%s")
 outfile=out/run-$me-$ts.out
 > $outfile || { echo unable to create output file $outfile; exit 1; }
