@@ -245,7 +245,6 @@ This takes atleast two arguments.
 1. router config
 2. one or more queue names to start replay
 
-
 ```bash
 ▶ bin/start-replay.sh cfg/lab-128-27.cfg replay-poc-4 replay-poc-5
 Reading env.sh
